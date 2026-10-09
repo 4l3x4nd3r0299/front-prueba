@@ -1,0 +1,2 @@
+<script setup>defineProps({ message: { type: String, default: '' }, type: { type: String, default: 'error' } }); defineEmits(['close'])</script>
+<template><div v-if="message" role="alert" class="flex items-start justify-between gap-4 rounded-lg border px-4 py-3 text-sm" :class="type === 'error' ? 'border-red-200 bg-red-50 text-red-800' : 'border-emerald-200 bg-emerald-50 text-emerald-800'"><span>{{ message }}</span><button type="button" class="font-bold" aria-label="Cerrar mensaje" @click="$emit('close')">×</button></div></template>
